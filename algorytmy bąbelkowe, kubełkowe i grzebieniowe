@@ -1,1 +1,42 @@
+//sortowanie bąbelkowe
 
+Random random = new Random();
+int n = 8;
+int temp;
+int[] T = new int[n];
+for (int i = 0;i < n; i++)
+{
+    T[i] = random.Next(1,10);
+    Console.Write(T[i] + " ");
+}
+for(int i = n - 1; i > 0; i--)
+{
+    for (int j = 0; j < n; j++)
+    {
+        if (T[i] > T[j + 1])
+        {
+            temp = T[j];
+            T[j] = T[j + 1];
+            T[j + 1] = temp;
+        }
+    }
+}
+Console.WriteLine("\n\n");
+for (int i = 0;  i < n; i++)
+{
+    Console.WriteLine(T[i] + " ");
+}
+
+// sortowanie przez wstawianie
+int j;
+for (int i = 1; i < n; i++)
+{
+    temp = T[i];
+    j = i - 1;
+    while (j >= 0 && T[j] > temp)
+    {
+        T[j + 1] = T[j];
+        j--;
+    }
+    T[j + 1] = temp;
+}
