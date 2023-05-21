@@ -99,6 +99,22 @@ for (int i = 0; i < b; i++)
     Console.WriteLine(X[i]);
 }
 
+// Zad 1a
+int d = int.Parse(Console.ReadLine());
+int[] Y = new int[d];
+int e = d;
+
+for (int i = 0; i < Y.Length; i++)
+{
+    Y[i] = e;
+    e += d;
+}
+
+for (int i = 0; i < Y.Length; i++)
+{
+    Console.WriteLine(Y[i]);
+}
+
 // Zad 2
 Random r2 = new Random();
 int[] P = new int[100];
