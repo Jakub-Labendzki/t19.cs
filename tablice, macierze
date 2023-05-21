@@ -152,6 +152,24 @@ for (int i = 0; i < T2.Length; i++)
 }
 return suma;
 
+//3a
+int[] T2 = new int[80];
+Random r3 = new Random();
+int suma = 0;
+for (int i = 0; i < T2.Length; i++)
+{
+    T2[i] = r3.Next(100, 1000);
+    for (int j = 0; j < i; j++)
+    {
+        if (T2[j] == T2[i])
+        {
+            suma += T2[i];
+        }
+    }
+    Console.WriteLine(T2[i]);
+}
+Console.WriteLine();
+
 // Zad 4
 int[,] G1 = new int[11, 11];
 Random r4 = new Random();
@@ -174,5 +192,40 @@ for (int i = 0; i < n3 && i < n2; i++)
 for (int i = 0; i < n3 && i < n2; i++)
 {
     suma1 += G1[i, n2 - 1 - i];
+}
+return suma1;
+
+//Zad 4a
+int[,] G1 = new int[11, 11];
+Random r4 = new Random();
+int n3 = G1.GetLength(0);
+int n2 = G1.GetLength(1);
+int suma1 = 0;
+for (int i = 0; i < n3; i++)
+{
+    for (int j = 0; j < n2; j++)
+    {
+        G1[i, j] = r4.Next(0, 10);
+        Console.Write(G1[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+for (int i = 0; i < n3; i++)
+{
+    int linia = 0;
+    for (int j = 0; j < n2; j++)
+    {
+        linia += G1[i, j];
+    }
+    suma1 = Math.Max(suma1, linia);
+}
+for (int j = 0; j < n2; j++)
+{
+    int linia2 = 0;
+    for (int i = 0; i < n3; i++)
+    {
+        linia2 += G1[i, j];
+    }
+    suma1 = Math.Max(suma1, linia2);
 }
 return suma1;
