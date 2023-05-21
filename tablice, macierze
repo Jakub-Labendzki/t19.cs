@@ -79,3 +79,84 @@ for (int i = 0; i < 12; i++)
     T[i] = r.Next(2, 15) * 7;
     Console.WriteLine(T[i]);
 }*/
+
+--------------------------------------------------------
+
+// Zad 1
+int a = int.Parse(Console.ReadLine());
+int[] X = new int[a];
+int b = 0;
+for (int i = 1; i < X.Length; i++)
+{
+    if (a % i == 0)
+    {
+        X[b] = i;
+        b++;
+    }
+}
+for (int i = 0; i < b; i++)
+{
+    Console.WriteLine(X[i]);
+}
+
+// Zad 2
+Random r2 = new Random();
+int[] P = new int[100];
+int c = 0;
+while (c < 20)
+{
+    int liczba = r2.Next(100, 1000);
+
+    if ((liczba % 2 == 1) && (liczba % 3 > 0) && (liczba % 5 > 0) && (liczba % 7 > 0))
+    {
+        P[c] = liczba;
+        c++;
+    }
+}
+Console.WriteLine();
+for (int i = 0; i < 20; i++)
+{
+    Console.WriteLine(P[i]);
+}
+
+// Zad 3
+int[] T2 = new int[40];
+Random r3 = new Random();
+int suma = 0;
+for (int i = 0; i < T2.Length; i++)
+{
+    T2[i] = r3.Next(10, 100);
+    for (int j = 0; j < i; j++)
+    {
+        if (T2[j] == T2[i])
+        {
+            suma += T2[i];
+        }
+    }
+}
+return suma;
+
+// Zad 4
+int[,] G1 = new int[11, 11];
+Random r4 = new Random();
+int n3 = G1.GetLength(0);
+int n2 = G1.GetLength(1);
+int suma1 = 0;
+for (int i = 0; i < n3; i++)
+{
+    for (int j = 0; j < n2; j++)
+    {
+        G1[i, j] = r4.Next(100, 1000);
+        Console.Write(G1[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+for (int i = 0; i < n3 && i < n2; i++)
+{
+    suma1 += G1[i, i];
+}
+for (int i = 0; i < n3 && i < n2; i++)
+{
+    suma1 += G1[i, n2 - 1 - i];
+}
+return suma1;
