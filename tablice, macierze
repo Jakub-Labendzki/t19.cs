@@ -135,6 +135,26 @@ for (int i = 0; i < 20; i++)
     Console.WriteLine(P[i]);
 }
 
+// Zad 2a
+Random r21 = new Random();
+int[] P1 = new int[60];
+int c1 = 0;
+while (c1 < 20)
+{
+    int liczba1 = r21.Next(10, 100);
+
+    if ((liczba1 % 2 == 1) && (liczba1 % 3 > 0) && (liczba1 % 5 > 0) && (liczba1 % 7 > 0))
+    {
+        P1[c1] = liczba1;
+        c1++;
+    }
+}
+Console.WriteLine();
+for (int i = 0; i < 20; i++)
+{
+    Console.WriteLine(P1[i]);
+}
+
 // Zad 3
 int[] T2 = new int[40];
 Random r3 = new Random();
