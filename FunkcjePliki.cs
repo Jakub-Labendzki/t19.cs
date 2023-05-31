@@ -36,30 +36,24 @@ for (int i = 1; i <= e; i++)
 
 
 
-Random random = new Random();
 string filename = "boki.txt";
 int liczbaPar = 15;
 double sumaPol = 0;
 
 using (StreamWriter writer = new StreamWriter(filename))
 {
+    Random random = new Random();
+
     for (int i = 0; i < liczbaPar; i++)
     {
         double a = random.NextDouble() * 10 + 1;
         double b = random.NextDouble() * 10 + 1;
-        writer.WriteLine($"{a},{b}");
-
         double pole = a * b / 2;
+
+        writer.WriteLine($"{a},{b}");
         sumaPol += pole;
     }
 }
 
-using (StreamReader reader = new StreamReader(filename))
-{
-    string line;
-    Console.WriteLine("Zawartość pliku boki.txt:");
-    while ((line = reader.ReadLine()) != null)
-    {
-        Console.WriteLine(line);
-    }
-}
+Console.WriteLine("Zawartość pliku boki.txt:");
+Console.WriteLine(File.ReadAllText(filename));
