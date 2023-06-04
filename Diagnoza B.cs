@@ -123,26 +123,24 @@ else
 
 // Zad 4
 /*
-class Program
-{
-    static string EncodeCesar(string s, int k)
-    {
-        char[] encodedChars = new char[s.Length];
-        for (int i = 0; i < s.Length; i++)
-        {
-            char c = s[i];
-            if (char.IsLetter(c))
-            {
-                char baseChar = char.IsUpper(c) ? 'A' : 'a';
-                encodedChars[i] = (char)((c - baseChar + k) % 26 + baseChar);
-            }
-            else
-            {
-                encodedChars[i] = c;
-            }
-        }
-        return new string(encodedChars);
-    }
+ static string EncodeCesar(string s, int k)
+ {
+     char[] encodedChars = new char[s.Length];
+     for (int i = 0; i < s.Length; i++)
+     {
+         char c = s[i];
+         if (char.IsLetter(c))
+         {
+             char baseChar = char.IsUpper(c) ? 'A' : 'a';
+             encodedChars[i] = (char)((c - baseChar + k) % 26 + baseChar);
+         }
+         else
+         {
+             encodedChars[i] = c;
+         }
+     }
+     return new string(encodedChars);
+ }
 
     static void Main(string[] args)
     {
@@ -155,7 +153,7 @@ class Program
         string encoded = EncodeCesar(s, k);
         Console.WriteLine("Zakodowane słowo: " + encoded);
     }
-}*/
+*/
 
 // Zad 5
 /*static int GCD(int a, int b)
