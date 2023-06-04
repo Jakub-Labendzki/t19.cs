@@ -122,8 +122,7 @@ else
 
 
 // Zad 4
-/*using System;
-
+/*
 class Program
 {
     static string EncodeCesar(string s, int k)
